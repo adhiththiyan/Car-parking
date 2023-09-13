@@ -5,11 +5,6 @@ const personName = document.querySelector(".personname")
 const vehicleNumber = document.querySelector(".vehiclenumber")
 const duration = document.querySelector(".duration")
 
-
-
-
-
-
 function getDetails() {
     const vno = document.getElementById("vno").value;
     const name = document.getElementById("name").value;
@@ -56,18 +51,20 @@ function checkOut(vno) {
         let dis = document.querySelector(".amount")
         dis.style.visibility = "visible"
         let amt = dis.querySelector("h1")       
-        amt.innerHTML = `The vehicle number: ${vno} is not fount`        
+        amt.innerHTML = `The vehicle number: ${vno} is not fount`    
        
     }
     
 }
-
-
 submit.addEventListener("click", getDetails);
 display.addEventListener("click", () => {
     const searchVno = document.getElementById("searchVno").value;
     checkOut(searchVno);
 });
+backBtn.addEventListener("click",()=>{
+    let dis = document.querySelector(".amount")
+    dis.style.visibility = "hidden"
+})
 
 
 
